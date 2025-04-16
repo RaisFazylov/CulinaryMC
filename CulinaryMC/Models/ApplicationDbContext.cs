@@ -10,6 +10,10 @@ namespace MasterClassManager.Models
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=MasterClassDatabase;Trusted_Connection=True;");
         }
+
+        /// <summary>
+        /// Обеспечивает создание базы данных, если она не существует.
+        /// </summary>
         public void Initialize()
         {
             Database.EnsureCreated();

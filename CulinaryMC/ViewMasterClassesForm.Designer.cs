@@ -50,7 +50,7 @@
             Controls.Add(dgvMasterClasses);
             Name = "ViewMasterClassesForm";
             Text = "Form4";
-            Load += ViewMasterClassesForm_Load;
+            //Load += ViewMasterClassesForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMasterClasses).EndInit();
             ResumeLayout(false);
         }

@@ -1,14 +1,5 @@
 ﻿using MasterClassManager.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CulinaryMC
 {
@@ -19,6 +10,10 @@ namespace CulinaryMC
             InitializeComponent();
             LoadMasterClasses();
         }
+
+        /// <summary>
+        /// Загружает список мастер-классов из базы данных и настраивает отображение DataGridView.
+        /// </summary>
         private void LoadMasterClasses()
         {
             try

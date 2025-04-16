@@ -1,14 +1,5 @@
 ﻿using MasterClassManager.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CulinaryMC
 {
@@ -18,11 +9,15 @@ namespace CulinaryMC
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Сохраняет новый мастер-класс в базу данных после проверки заполнения полей.
+        /// </summary>
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtName.Text) ||
-        string.IsNullOrWhiteSpace(txtDescription.Text) ||
-        cmbCategory.SelectedItem == null)
+                string.IsNullOrWhiteSpace(txtDescription.Text) ||
+                cmbCategory.SelectedItem == null)
             {
                 MessageBox.Show("Пожалуйста, заполните все поля");
                 return;
@@ -52,7 +47,6 @@ namespace CulinaryMC
             {
                 MessageBox.Show($"Общая ошибка: {ex.Message}");
             }
-
         }
 
         private void AddMasterClassForm_Load(object sender, EventArgs e)
