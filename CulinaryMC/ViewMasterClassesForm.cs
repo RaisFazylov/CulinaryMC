@@ -27,6 +27,7 @@ namespace CulinaryMC
             dgvMasterClasses.Columns["Description"].Width = 358;
             dgvMasterClasses.Columns["Category"].Width = 80;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            dgvMasterClasses.ReadOnly = true;
         }
         private void LoadRecentMasterClasses()
         {

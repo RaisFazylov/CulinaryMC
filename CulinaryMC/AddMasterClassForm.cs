@@ -16,6 +16,9 @@ namespace CulinaryMC
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             txtName.MaxLength = 20;
             txtDescription.MaxLength = 100;
+            dataGridView1.AllowUserToOrderColumns = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
         }
 
         /// <summary>

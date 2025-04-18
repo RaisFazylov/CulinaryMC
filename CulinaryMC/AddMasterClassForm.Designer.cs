@@ -56,8 +56,9 @@
             // 
             txtDescription.Cursor = Cursors.IBeam;
             txtDescription.Location = new Point(123, 198);
+            txtDescription.Multiline = true;
             txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(250, 27);
+            txtDescription.Size = new Size(250, 83);
             txtDescription.TabIndex = 1;
             // 
             // dtpDate
@@ -93,9 +94,9 @@
             // 
             label1.BackColor = Color.Moccasin;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(17, 88);
+            label1.Location = new Point(12, 88);
             label1.Name = "label1";
-            label1.Size = new Size(103, 27);
+            label1.Size = new Size(108, 27);
             label1.TabIndex = 5;
             label1.Text = "Название";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -104,9 +105,9 @@
             // 
             label2.BackColor = Color.Moccasin;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(17, 148);
+            label2.Location = new Point(12, 148);
             label2.Name = "label2";
-            label2.Size = new Size(103, 27);
+            label2.Size = new Size(108, 27);
             label2.TabIndex = 6;
             label2.Text = "Дата";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -115,9 +116,9 @@
             // 
             label3.BackColor = Color.Moccasin;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(17, 198);
+            label3.Location = new Point(12, 198);
             label3.Name = "label3";
-            label3.Size = new Size(100, 27);
+            label3.Size = new Size(108, 27);
             label3.TabIndex = 7;
             label3.Text = "Описание";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -126,9 +127,9 @@
             // 
             label4.BackColor = Color.Moccasin;
             label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(17, 287);
+            label4.Location = new Point(12, 287);
             label4.Name = "label4";
-            label4.Size = new Size(100, 28);
+            label4.Size = new Size(108, 28);
             label4.TabIndex = 8;
             label4.Text = "Категория";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -157,7 +158,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(347, 188);
+            dataGridView1.Size = new Size(347, 227);
             dataGridView1.TabIndex = 10;
             // 
             // label6

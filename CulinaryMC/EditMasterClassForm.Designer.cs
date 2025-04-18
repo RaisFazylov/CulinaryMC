@@ -83,7 +83,7 @@
             // 
             label4.BackColor = Color.Moccasin;
             label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(12, 290);
+            label4.Location = new Point(12, 302);
             label4.Name = "label4";
             label4.Size = new Size(102, 25);
             label4.TabIndex = 3;
@@ -114,7 +114,7 @@
             // 
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Items.AddRange(new object[] { "Online", "Offline", "Online-Offline" });
-            comboBoxCategory.Location = new Point(115, 290);
+            comboBoxCategory.Location = new Point(113, 299);
             comboBoxCategory.Name = "comboBoxCategory";
             comboBoxCategory.Size = new Size(250, 28);
             comboBoxCategory.TabIndex = 7;
@@ -123,9 +123,9 @@
             // 
             lblCurrentName.BackColor = Color.Moccasin;
             lblCurrentName.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCurrentName.Location = new Point(538, 119);
+            lblCurrentName.Location = new Point(508, 119);
             lblCurrentName.Name = "lblCurrentName";
-            lblCurrentName.Size = new Size(119, 27);
+            lblCurrentName.Size = new Size(280, 27);
             lblCurrentName.TabIndex = 8;
             lblCurrentName.Text = "Название";
             lblCurrentName.TextAlign = ContentAlignment.MiddleCenter;
@@ -134,9 +134,9 @@
             // 
             lblCurrentDate.BackColor = Color.Moccasin;
             lblCurrentDate.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCurrentDate.Location = new Point(538, 180);
+            lblCurrentDate.Location = new Point(508, 180);
             lblCurrentDate.Name = "lblCurrentDate";
-            lblCurrentDate.Size = new Size(119, 27);
+            lblCurrentDate.Size = new Size(280, 27);
             lblCurrentDate.TabIndex = 9;
             lblCurrentDate.Text = "Дата";
             lblCurrentDate.TextAlign = ContentAlignment.MiddleCenter;
@@ -145,9 +145,9 @@
             // 
             lblCurrentDescription.BackColor = Color.Moccasin;
             lblCurrentDescription.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCurrentDescription.Location = new Point(538, 234);
+            lblCurrentDescription.Location = new Point(508, 234);
             lblCurrentDescription.Name = "lblCurrentDescription";
-            lblCurrentDescription.Size = new Size(119, 27);
+            lblCurrentDescription.Size = new Size(280, 27);
             lblCurrentDescription.TabIndex = 10;
             lblCurrentDescription.Text = "Описание";
             lblCurrentDescription.TextAlign = ContentAlignment.MiddleCenter;
@@ -156,9 +156,9 @@
             // 
             lblCurrentCategory.BackColor = Color.Moccasin;
             lblCurrentCategory.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCurrentCategory.Location = new Point(536, 290);
+            lblCurrentCategory.Location = new Point(508, 299);
             lblCurrentCategory.Name = "lblCurrentCategory";
-            lblCurrentCategory.Size = new Size(121, 28);
+            lblCurrentCategory.Size = new Size(280, 28);
             lblCurrentCategory.TabIndex = 11;
             lblCurrentCategory.Text = "Категория";
             lblCurrentCategory.TextAlign = ContentAlignment.MiddleCenter;
