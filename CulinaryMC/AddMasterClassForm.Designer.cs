@@ -157,9 +157,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(489, 65);
             label6.Name = "label6";
-            label6.Size = new Size(192, 20);
+            label6.Size = new Size(184, 20);
             label6.TabIndex = 11;
-            label6.Text = "Только что добьавленные";
+            label6.Text = "Только что добавленные";
             // 
             // AddMasterClassForm
             // 

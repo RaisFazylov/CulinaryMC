@@ -49,37 +49,43 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(30, 126);
+            label1.BackColor = Color.Moccasin;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 119);
             label1.Name = "label1";
-            label1.Size = new Size(77, 20);
+            label1.Size = new Size(102, 27);
             label1.TabIndex = 0;
             label1.Text = "Название";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(30, 185);
+            label2.BackColor = Color.Moccasin;
+            label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(12, 180);
             label2.Name = "label2";
-            label2.Size = new Size(41, 20);
+            label2.Size = new Size(102, 27);
             label2.TabIndex = 1;
             label2.Text = "Дата";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(30, 237);
+            label3.BackColor = Color.Moccasin;
+            label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(12, 234);
             label3.Name = "label3";
-            label3.Size = new Size(79, 20);
+            label3.Size = new Size(104, 23);
             label3.TabIndex = 2;
             label3.Text = "Описание";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(28, 293);
+            label4.BackColor = Color.Moccasin;
+            label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(12, 290);
             label4.Name = "label4";
-            label4.Size = new Size(81, 20);
+            label4.Size = new Size(102, 25);
             label4.TabIndex = 3;
             label4.Text = "Категория";
             // 
@@ -115,43 +121,47 @@
             // 
             // lblCurrentName
             // 
-            lblCurrentName.AutoSize = true;
             lblCurrentName.BackColor = Color.Moccasin;
-            lblCurrentName.Location = new Point(538, 126);
+            lblCurrentName.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCurrentName.Location = new Point(538, 119);
             lblCurrentName.Name = "lblCurrentName";
-            lblCurrentName.Size = new Size(77, 20);
+            lblCurrentName.Size = new Size(119, 27);
             lblCurrentName.TabIndex = 8;
             lblCurrentName.Text = "Название";
+            lblCurrentName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblCurrentDate
             // 
-            lblCurrentDate.AutoSize = true;
             lblCurrentDate.BackColor = Color.Moccasin;
-            lblCurrentDate.Location = new Point(538, 187);
+            lblCurrentDate.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCurrentDate.Location = new Point(538, 180);
             lblCurrentDate.Name = "lblCurrentDate";
-            lblCurrentDate.Size = new Size(41, 20);
+            lblCurrentDate.Size = new Size(119, 27);
             lblCurrentDate.TabIndex = 9;
             lblCurrentDate.Text = "Дата";
+            lblCurrentDate.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblCurrentDescription
             // 
-            lblCurrentDescription.AutoSize = true;
             lblCurrentDescription.BackColor = Color.Moccasin;
-            lblCurrentDescription.Location = new Point(538, 241);
+            lblCurrentDescription.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCurrentDescription.Location = new Point(538, 234);
             lblCurrentDescription.Name = "lblCurrentDescription";
-            lblCurrentDescription.Size = new Size(79, 20);
+            lblCurrentDescription.Size = new Size(119, 27);
             lblCurrentDescription.TabIndex = 10;
             lblCurrentDescription.Text = "Описание";
+            lblCurrentDescription.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblCurrentCategory
             // 
-            lblCurrentCategory.AutoSize = true;
             lblCurrentCategory.BackColor = Color.Moccasin;
-            lblCurrentCategory.Location = new Point(536, 298);
+            lblCurrentCategory.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCurrentCategory.Location = new Point(536, 290);
             lblCurrentCategory.Name = "lblCurrentCategory";
-            lblCurrentCategory.Size = new Size(81, 20);
+            lblCurrentCategory.Size = new Size(121, 28);
             lblCurrentCategory.TabIndex = 11;
             lblCurrentCategory.Text = "Категория";
+            lblCurrentCategory.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnSave
             // 
@@ -159,7 +169,7 @@
             btnSave.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.Location = new Point(146, 367);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(131, 50);
+            btnSave.Size = new Size(142, 50);
             btnSave.TabIndex = 12;
             btnSave.Text = "Сохранить";
             btnSave.UseVisualStyleBackColor = false;
@@ -192,7 +202,7 @@
             // 
             label6.BackColor = Color.Moccasin;
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(495, 74);
+            label6.Location = new Point(508, 77);
             label6.Name = "label6";
             label6.Size = new Size(179, 30);
             label6.TabIndex = 15;

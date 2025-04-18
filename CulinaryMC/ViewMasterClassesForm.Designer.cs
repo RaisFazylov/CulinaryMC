@@ -54,10 +54,10 @@
             // btnSaveChanges
             // 
             btnSaveChanges.BackColor = Color.Moccasin;
-            btnSaveChanges.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSaveChanges.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             btnSaveChanges.Location = new Point(127, 386);
             btnSaveChanges.Name = "btnSaveChanges";
-            btnSaveChanges.Size = new Size(138, 41);
+            btnSaveChanges.Size = new Size(170, 52);
             btnSaveChanges.TabIndex = 1;
             btnSaveChanges.Text = "Редактировать";
             btnSaveChanges.UseVisualStyleBackColor = false;
@@ -66,10 +66,10 @@
             // label1
             // 
             label1.BackColor = Color.Moccasin;
-            label1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(191, 20);
+            label1.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(174, 19);
             label1.Name = "label1";
-            label1.Size = new Size(446, 40);
+            label1.Size = new Size(448, 48);
             label1.TabIndex = 2;
             label1.Text = "Поиск и редактирование мастер-классов";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -85,10 +85,10 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.Moccasin;
-            btnDelete.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDelete.Location = new Point(546, 386);
+            btnDelete.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.Location = new Point(523, 386);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(105, 41);
+            btnDelete.Size = new Size(128, 52);
             btnDelete.TabIndex = 4;
             btnDelete.Text = "Удалить";
             btnDelete.UseVisualStyleBackColor = false;
