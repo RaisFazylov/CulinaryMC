@@ -41,10 +41,10 @@
             // btnAdd
             // 
             btnAdd.BackColor = Color.Moccasin;
-            btnAdd.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.Location = new Point(168, 347);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(104, 38);
+            btnAdd.Size = new Size(123, 38);
             btnAdd.TabIndex = 0;
             btnAdd.Text = "Добавить";
             btnAdd.UseVisualStyleBackColor = false;
@@ -53,10 +53,10 @@
             // btnView
             // 
             btnView.BackColor = Color.Moccasin;
-            btnView.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnView.Location = new Point(542, 347);
+            btnView.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            btnView.Location = new Point(520, 347);
             btnView.Name = "btnView";
-            btnView.Size = new Size(104, 38);
+            btnView.Size = new Size(126, 38);
             btnView.TabIndex = 2;
             btnView.Text = "Просмотр";
             btnView.UseVisualStyleBackColor = false;
@@ -85,10 +85,10 @@
             // labelo
             // 
             labelo.BackColor = Color.Moccasin;
-            labelo.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            labelo.Location = new Point(234, 18);
+            labelo.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            labelo.Location = new Point(194, 19);
             labelo.Name = "labelo";
-            labelo.Size = new Size(335, 47);
+            labelo.Size = new Size(415, 47);
             labelo.TabIndex = 5;
             labelo.Text = "Кулинарные мастер-классы";
             labelo.TextAlign = ContentAlignment.MiddleCenter;

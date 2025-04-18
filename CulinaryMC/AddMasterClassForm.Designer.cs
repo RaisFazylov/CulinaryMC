@@ -91,39 +91,47 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(37, 91);
+            label1.BackColor = Color.Moccasin;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(17, 88);
             label1.Name = "label1";
-            label1.Size = new Size(77, 20);
+            label1.Size = new Size(103, 27);
             label1.TabIndex = 5;
             label1.Text = "Название";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(37, 148);
+            label2.BackColor = Color.Moccasin;
+            label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(17, 148);
             label2.Name = "label2";
-            label2.Size = new Size(41, 20);
+            label2.Size = new Size(103, 27);
             label2.TabIndex = 6;
             label2.Text = "Дата";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(37, 198);
+            label3.BackColor = Color.Moccasin;
+            label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(17, 198);
             label3.Name = "label3";
-            label3.Size = new Size(79, 20);
+            label3.Size = new Size(100, 27);
             label3.TabIndex = 7;
             label3.Text = "Описание";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(37, 295);
+            label4.BackColor = Color.Moccasin;
+            label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(17, 287);
             label4.Name = "label4";
-            label4.Size = new Size(81, 20);
+            label4.Size = new Size(100, 28);
             label4.TabIndex = 8;
             label4.Text = "Категория";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
             // 

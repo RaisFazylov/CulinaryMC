@@ -14,6 +14,7 @@ namespace CulinaryMC
         {
             InitializeComponent();
             InitializeDatabase();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         /// <summary>

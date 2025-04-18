@@ -13,6 +13,9 @@ namespace CulinaryMC
             dataGridView1.Columns["Name"].Width = 145;
             dataGridView1.Columns["Data"].Width = 145;
             dtpDate.MinDate = DateTime.Today;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            txtName.MaxLength = 20;
+            txtDescription.MaxLength = 100;
         }
 
         /// <summary>
@@ -30,7 +33,7 @@ namespace CulinaryMC
             }
             if (dtpDate.Value < DateTime.Now)
             {
-                MessageBox.Show("Нельзя выбрать прошедшую дату для мастер-класса!");
+                MessageBox.Show("Все события на сегодня заняты!");
                 return;
             }
             var newMasterClass = new MasterClass

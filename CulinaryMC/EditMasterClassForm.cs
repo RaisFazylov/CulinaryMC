@@ -17,6 +17,7 @@ namespace CulinaryMC
             _masterClass = masterClass;
             _dbContext = dbContext;
             InitializeFormFields();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void InitializeFormFields()

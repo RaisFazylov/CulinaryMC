@@ -40,6 +40,10 @@
             // 
             // dgvMasterClasses
             // 
+            dgvMasterClasses.AllowUserToAddRows = false;
+            dgvMasterClasses.AllowUserToDeleteRows = false;
+            dgvMasterClasses.AllowUserToResizeColumns = false;
+            dgvMasterClasses.AllowUserToResizeRows = false;
             dgvMasterClasses.BackgroundColor = Color.Moccasin;
             dgvMasterClasses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMasterClasses.GridColor = Color.Cornsilk;

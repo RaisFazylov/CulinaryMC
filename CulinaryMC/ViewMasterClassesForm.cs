@@ -24,8 +24,9 @@ namespace CulinaryMC
             ConfigureDataGridView();
             dgvMasterClasses.Columns["Name"].Width = 90;
             dgvMasterClasses.Columns["Date"].Width = 120;
-            dgvMasterClasses.Columns["Description"].Width = 378;
+            dgvMasterClasses.Columns["Description"].Width = 358;
             dgvMasterClasses.Columns["Category"].Width = 80;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         private void LoadRecentMasterClasses()
         {
