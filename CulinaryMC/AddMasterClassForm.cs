@@ -8,6 +8,9 @@ namespace CulinaryMC
         public AddMasterClassForm()
         {
             InitializeComponent();
+            dataGridView1.Columns.Add("Name", "Имя");
+            dataGridView1.Columns.Add("Data", "Время");
+            dataGridView1.Columns.Add("Category", "Категория");
         }
 
         /// <summary>
@@ -15,11 +18,12 @@ namespace CulinaryMC
         /// </summary>
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrWhiteSpace(txtName.Text) ||
                 string.IsNullOrWhiteSpace(txtDescription.Text) ||
                 cmbCategory.SelectedItem == null)
             {
-                MessageBox.Show("Пожалуйста, заполните все поля");
+                MessageBox.Show("Необходимо заполнить все поля!");
                 return;
             }
 
@@ -37,7 +41,13 @@ namespace CulinaryMC
                 db.MasterClasses.Add(newMasterClass);
                 db.SaveChanges();
                 MessageBox.Show("Мастер-класс успешно добавлен!");
-                this.Close();
+                object[] rowData =
+                {
+                    txtName.Text,
+                    dtpDate.Text,
+                    cmbCategory.SelectedItem.ToString()
+                };
+                dataGridView1.Rows.Add(rowData); 
             }
             catch (DbUpdateException dbEx)
             {

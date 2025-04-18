@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteMasterClassForm));
             dgvMasterClasses = new DataGridView();
             label1 = new Label();
             btnDelete = new Button();
@@ -36,6 +37,7 @@
             // 
             // dgvMasterClasses
             // 
+            dgvMasterClasses.BackgroundColor = Color.Moccasin;
             dgvMasterClasses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMasterClasses.Location = new Point(12, 94);
             dgvMasterClasses.Name = "dgvMasterClasses";
@@ -46,17 +48,16 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.BackColor = Color.Moccasin;
             label1.Location = new Point(340, 24);
             label1.Name = "label1";
-            label1.Size = new Size(132, 20);
+            label1.Size = new Size(166, 37);
             label1.TabIndex = 2;
             label1.Text = "Выбрать событие";
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(364, 401);
+            btnDelete.Location = new Point(353, 409);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 3;
@@ -73,11 +74,11 @@
             Controls.Add(btnDelete);
             Controls.Add(label1);
             Controls.Add(dgvMasterClasses);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DeleteMasterClassForm";
-            Text = "Form3";
+            Text = "Кулинарные мастер-классы";
             ((System.ComponentModel.ISupportInitialize)dgvMasterClasses).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

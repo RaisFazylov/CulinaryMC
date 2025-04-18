@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMasterClassForm));
             txtName = new TextBox();
             txtDescription = new TextBox();
             dtpDate = new DateTimePicker();
@@ -38,20 +39,24 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // txtName
             // 
+            txtName.Cursor = Cursors.IBeam;
             txtName.Location = new Point(123, 88);
             txtName.Name = "txtName";
-            txtName.Size = new Size(125, 27);
+            txtName.Size = new Size(250, 27);
             txtName.TabIndex = 0;
             // 
             // txtDescription
             // 
+            txtDescription.Cursor = Cursors.IBeam;
             txtDescription.Location = new Point(123, 198);
             txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(125, 27);
+            txtDescription.Size = new Size(250, 27);
             txtDescription.TabIndex = 1;
             // 
             // dtpDate
@@ -65,19 +70,21 @@
             // 
             cmbCategory.FormattingEnabled = true;
             cmbCategory.Items.AddRange(new object[] { "Online", "Offline", "Online-offline" });
-            cmbCategory.Location = new Point(126, 248);
+            cmbCategory.Location = new Point(124, 248);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(151, 28);
+            cmbCategory.Size = new Size(249, 28);
             cmbCategory.TabIndex = 3;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(356, 350);
+            btnSave.BackColor = Color.Moccasin;
+            btnSave.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.Location = new Point(352, 348);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(94, 29);
+            btnSave.Size = new Size(109, 35);
             btnSave.TabIndex = 4;
             btnSave.Text = "Сохранить";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // label1
@@ -118,12 +125,29 @@
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(336, 31);
+            label5.BackColor = Color.Moccasin;
+            label5.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(244, 9);
             label5.Name = "label5";
-            label5.Size = new Size(114, 20);
+            label5.Size = new Size(322, 49);
             label5.TabIndex = 9;
-            label5.Text = "Добавить текст";
+            label5.Text = "Добавить мастер-класс";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BackgroundColor = Color.Moccasin;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(417, 88);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(347, 188);
+            dataGridView1.TabIndex = 10;
             // 
             // AddMasterClassForm
             // 
@@ -131,6 +155,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(800, 450);
+            Controls.Add(dataGridView1);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -141,9 +166,11 @@
             Controls.Add(dtpDate);
             Controls.Add(txtDescription);
             Controls.Add(txtName);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddMasterClassForm";
-            Text = "Form2";
+            Text = "Кулинарные мастер-классы";
             Load += AddMasterClassForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,5 +187,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private DataGridView dataGridView1;
     }
 }

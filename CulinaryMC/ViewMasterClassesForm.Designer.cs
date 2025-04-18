@@ -28,47 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewMasterClassesForm));
             dgvMasterClasses = new DataGridView();
             btnSaveChanges = new Button();
+            label1 = new Label();
+            txtSearch = new TextBox();
+            btnDelete = new Button();
+            btnSearch = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvMasterClasses).BeginInit();
             SuspendLayout();
             // 
             // dgvMasterClasses
             // 
+            dgvMasterClasses.BackgroundColor = Color.Moccasin;
             dgvMasterClasses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMasterClasses.Location = new Point(40, 113);
+            dgvMasterClasses.GridColor = Color.Cornsilk;
+            dgvMasterClasses.Location = new Point(40, 152);
             dgvMasterClasses.Name = "dgvMasterClasses";
             dgvMasterClasses.RowHeadersWidth = 51;
             dgvMasterClasses.RowTemplate.Height = 29;
-            dgvMasterClasses.Size = new Size(723, 240);
+            dgvMasterClasses.Size = new Size(723, 201);
             dgvMasterClasses.TabIndex = 0;
             // 
             // btnSaveChanges
             // 
-            btnSaveChanges.Location = new Point(376, 395);
+            btnSaveChanges.BackColor = Color.Moccasin;
+            btnSaveChanges.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSaveChanges.Location = new Point(127, 386);
             btnSaveChanges.Name = "btnSaveChanges";
-            btnSaveChanges.Size = new Size(94, 29);
+            btnSaveChanges.Size = new Size(138, 41);
             btnSaveChanges.TabIndex = 1;
-            btnSaveChanges.Text = "button1";
-            btnSaveChanges.UseVisualStyleBackColor = true;
+            btnSaveChanges.Text = "Редактировать";
+            btnSaveChanges.UseVisualStyleBackColor = false;
             btnSaveChanges.Click += btnSaveChanges_Click;
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.Moccasin;
+            label1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(191, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(446, 40);
+            label1.TabIndex = 2;
+            label1.Text = "Поиск и редактирование мастер-классов";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(40, 80);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(181, 27);
+            txtSearch.TabIndex = 3;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.Moccasin;
+            btnDelete.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.Location = new Point(546, 386);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(105, 41);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Удалить";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = Color.Moccasin;
+            btnSearch.Location = new Point(219, 79);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(31, 29);
+            btnSearch.TabIndex = 5;
+            btnSearch.Text = "🔍︎";
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // ViewMasterClassesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSearch);
+            Controls.Add(btnDelete);
+            Controls.Add(txtSearch);
+            Controls.Add(label1);
             Controls.Add(btnSaveChanges);
             Controls.Add(dgvMasterClasses);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ViewMasterClassesForm";
-            Text = "Form4";
+            Text = "Кулинарные мастер-классы";
+            Load += ViewMasterClassesForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMasterClasses).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dgvMasterClasses;
         private Button btnSaveChanges;
+        private Label label1;
+        private TextBox txtSearch;
+        private Button btnDelete;
+        private Button btnSearch;
     }
 }
