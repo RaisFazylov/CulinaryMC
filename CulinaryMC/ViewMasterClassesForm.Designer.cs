@@ -45,6 +45,7 @@
             dgvMasterClasses.GridColor = Color.Cornsilk;
             dgvMasterClasses.Location = new Point(40, 152);
             dgvMasterClasses.Name = "dgvMasterClasses";
+            dgvMasterClasses.ReadOnly = true;
             dgvMasterClasses.RowHeadersWidth = 51;
             dgvMasterClasses.RowTemplate.Height = 29;
             dgvMasterClasses.Size = new Size(723, 201);

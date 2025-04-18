@@ -33,7 +33,7 @@
             btnView = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            label1 = new Label();
+            labelo = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -82,17 +82,17 @@
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
             // 
-            // label1
+            // labelo
             // 
-            label1.BackColor = Color.Moccasin;
-            label1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(234, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(335, 47);
-            label1.TabIndex = 5;
-            label1.Text = "Кулинарные мастер-классы";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
+            labelo.BackColor = Color.Moccasin;
+            labelo.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            labelo.Location = new Point(234, 18);
+            labelo.Name = "labelo";
+            labelo.Size = new Size(335, 47);
+            labelo.TabIndex = 5;
+            labelo.Text = "Кулинарные мастер-классы";
+            labelo.TextAlign = ContentAlignment.MiddleCenter;
+            labelo.Click += label1_Click;
             // 
             // Home
             // 
@@ -100,7 +100,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            Controls.Add(labelo);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(btnView);
@@ -119,6 +119,6 @@
         private Button btnView;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private Label label1;
+        private Label labelo;
     }
 }

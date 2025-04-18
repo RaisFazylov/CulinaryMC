@@ -1,6 +1,7 @@
 ﻿using MasterClassManager.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Windows.Forms;
 namespace CulinaryMC
 {
     /// <summary>
@@ -21,26 +22,27 @@ namespace CulinaryMC
             _bindingSource = new BindingSource();
             LoadMasterClasses();
             ConfigureDataGridView();
+            dgvMasterClasses.Columns["Name"].Width = 90;
+            dgvMasterClasses.Columns["Date"].Width = 120;
+            dgvMasterClasses.Columns["Description"].Width = 378;
+            dgvMasterClasses.Columns["Category"].Width = 80;
         }
         private void LoadRecentMasterClasses()
         {
-            // Показываем мастер-классы, добавленные за последние 7 дней
             var recentDate = DateTime.Now.AddDays(-7);
             var recentClasses = _dbContext.MasterClasses
                 .Where(mc => mc.Date >= recentDate)
                 .OrderByDescending(mc => mc.Date)
                 .ToList();
 
-            // Привязываем данные к DataGridView
             dgvMasterClasses.DataSource = recentClasses;
-            dgvMasterClasses.Columns["Id"].Visible = false; // Скрываем колонку с ID
+            dgvMasterClasses.Columns["Id"].Visible = false;
         }
         /// <summary>
         /// Загрузка всех мастер-классов из базы данных
         /// </summary>
         private void LoadMasterClasses()
         {
-            // Настраиваем привязку данных для редактирования
             _bindingSource.DataSource = _dbContext.MasterClasses.Local.ToBindingList();
             _dbContext.MasterClasses.Load();
             dgvMasterClasses.DataSource = _bindingSource;
@@ -54,8 +56,8 @@ namespace CulinaryMC
             dgvMasterClasses.AutoGenerateColumns = true;
             dgvMasterClasses.AllowUserToAddRows = false;
             dgvMasterClasses.AllowUserToDeleteRows = false;
-            dgvMasterClasses.ReadOnly = false; // Разрешаем редактирование
-            dgvMasterClasses.Columns["Id"].Visible = false; // Скрываем ID
+            dgvMasterClasses.ReadOnly = false;
+            dgvMasterClasses.Columns["Id"].Visible = false;
         }
 
         /// <summary>

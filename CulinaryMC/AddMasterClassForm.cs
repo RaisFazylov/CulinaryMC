@@ -10,7 +10,9 @@ namespace CulinaryMC
             InitializeComponent();
             dataGridView1.Columns.Add("Name", "Имя");
             dataGridView1.Columns.Add("Data", "Время");
-            dataGridView1.Columns.Add("Category", "Категория");
+            dataGridView1.Columns["Name"].Width = 145;
+            dataGridView1.Columns["Data"].Width = 145;
+            dtpDate.MinDate = DateTime.Today;
         }
 
         /// <summary>
@@ -26,7 +28,11 @@ namespace CulinaryMC
                 MessageBox.Show("Необходимо заполнить все поля!");
                 return;
             }
-
+            if (dtpDate.Value < DateTime.Now)
+            {
+                MessageBox.Show("Нельзя выбрать прошедшую дату для мастер-класса!");
+                return;
+            }
             var newMasterClass = new MasterClass
             {
                 Name = txtName.Text,

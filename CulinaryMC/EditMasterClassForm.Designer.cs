@@ -156,10 +156,10 @@
             // btnSave
             // 
             btnSave.BackColor = Color.Moccasin;
-            btnSave.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSave.Location = new Point(168, 367);
+            btnSave.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.Location = new Point(146, 367);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(109, 37);
+            btnSave.Size = new Size(131, 50);
             btnSave.TabIndex = 12;
             btnSave.Text = "Сохранить";
             btnSave.UseVisualStyleBackColor = false;
@@ -168,10 +168,10 @@
             // btnCancel
             // 
             btnCancel.BackColor = Color.Moccasin;
-            btnCancel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancel.Location = new Point(508, 368);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(109, 36);
+            btnCancel.Size = new Size(140, 49);
             btnCancel.TabIndex = 13;
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = false;
@@ -180,10 +180,10 @@
             // label5
             // 
             label5.BackColor = Color.Moccasin;
-            label5.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(227, 9);
+            label5.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(168, 9);
             label5.Name = "label5";
-            label5.Size = new Size(352, 48);
+            label5.Size = new Size(480, 53);
             label5.TabIndex = 14;
             label5.Text = "Редактирование мастер-класса";
             label5.TextAlign = ContentAlignment.MiddleCenter;

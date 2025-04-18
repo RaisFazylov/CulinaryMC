@@ -40,6 +40,7 @@
             label4 = new Label();
             label5 = new Label();
             dataGridView1 = new DataGridView();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -70,18 +71,19 @@
             // 
             cmbCategory.FormattingEnabled = true;
             cmbCategory.Items.AddRange(new object[] { "Online", "Offline", "Online-offline" });
-            cmbCategory.Location = new Point(124, 248);
+            cmbCategory.Location = new Point(124, 287);
             cmbCategory.Name = "cmbCategory";
             cmbCategory.Size = new Size(249, 28);
             cmbCategory.TabIndex = 3;
+            cmbCategory.Text = "Online";
             // 
             // btnSave
             // 
             btnSave.BackColor = Color.Moccasin;
-            btnSave.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSave.Location = new Point(352, 348);
+            btnSave.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.Location = new Point(324, 353);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(109, 35);
+            btnSave.Size = new Size(163, 57);
             btnSave.TabIndex = 4;
             btnSave.Text = "Сохранить";
             btnSave.UseVisualStyleBackColor = false;
@@ -117,7 +119,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(37, 251);
+            label4.Location = new Point(37, 295);
             label4.Name = "label4";
             label4.Size = new Size(81, 20);
             label4.TabIndex = 8;
@@ -126,10 +128,10 @@
             // label5
             // 
             label5.BackColor = Color.Moccasin;
-            label5.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(244, 9);
+            label5.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(235, 9);
             label5.Name = "label5";
-            label5.Size = new Size(322, 49);
+            label5.Size = new Size(354, 49);
             label5.TabIndex = 9;
             label5.Text = "Добавить мастер-класс";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -144,10 +146,20 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(417, 88);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(347, 188);
             dataGridView1.TabIndex = 10;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(489, 65);
+            label6.Name = "label6";
+            label6.Size = new Size(192, 20);
+            label6.TabIndex = 11;
+            label6.Text = "Только что добьавленные";
             // 
             // AddMasterClassForm
             // 
@@ -155,6 +167,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(800, 450);
+            Controls.Add(label6);
             Controls.Add(dataGridView1);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -188,5 +201,6 @@
         private Label label4;
         private Label label5;
         private DataGridView dataGridView1;
+        private Label label6;
     }
 }
