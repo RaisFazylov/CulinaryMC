@@ -18,6 +18,8 @@ namespace CulinaryMC
             _dbContext = dbContext;
             InitializeFormFields();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            txtName.MaxLength = 20;
+            txtDescription.MaxLength = 100;
         }
 
         private void InitializeFormFields()
