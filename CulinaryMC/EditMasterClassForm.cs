@@ -26,6 +26,8 @@ namespace CulinaryMC
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             txtName.MaxLength = 20;
             txtDescription.MaxLength = 100;
+
+            dateTimePicker.MinDate = DateTime.Today;
         }
 
         /// <summary>
@@ -58,6 +60,11 @@ namespace CulinaryMC
             _dbContext.Entry(_masterClass).State = EntityState.Modified;
             this.DialogResult = DialogResult.OK;
             this.Close();
+            if (dateTimePicker.Value < DateTime.Now)
+            {
+                MessageBox.Show("Все события на сегодня заняты!");
+                return;
+            }
         }
 
         /// <summary>
