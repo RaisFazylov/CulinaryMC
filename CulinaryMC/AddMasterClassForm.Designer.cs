@@ -39,9 +39,9 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvLast = new DataGridView();
             label6 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLast).BeginInit();
             SuspendLayout();
             // 
             // txtName
@@ -145,21 +145,22 @@
             label5.Text = "Добавить мастер-класс";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // dgvLast
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.BackgroundColor = Color.Moccasin;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(417, 88);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(347, 227);
-            dataGridView1.TabIndex = 10;
+            dgvLast.AllowUserToAddRows = false;
+            dgvLast.AllowUserToDeleteRows = false;
+            dgvLast.AllowUserToResizeColumns = false;
+            dgvLast.AllowUserToResizeRows = false;
+            dgvLast.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLast.BackgroundColor = Color.Moccasin;
+            dgvLast.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLast.Location = new Point(417, 88);
+            dgvLast.Name = "dgvLast";
+            dgvLast.ReadOnly = true;
+            dgvLast.RowHeadersWidth = 51;
+            dgvLast.RowTemplate.Height = 29;
+            dgvLast.Size = new Size(347, 227);
+            dgvLast.TabIndex = 10;
             // 
             // label6
             // 
@@ -177,7 +178,7 @@
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(800, 450);
             Controls.Add(label6);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvLast);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -192,7 +193,7 @@
             Name = "AddMasterClassForm";
             Text = "Кулинарные мастер-классы";
             Load += AddMasterClassForm_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLast).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -209,7 +210,7 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private DataGridView dataGridView1;
+        private DataGridView dgvLast;
         private Label label6;
     }
 }

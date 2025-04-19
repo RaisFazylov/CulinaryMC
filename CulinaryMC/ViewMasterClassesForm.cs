@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ClosedXML.Excel;
 using System.IO;
+using System.Windows.Forms;
 
 namespace CulinaryMC
 {
@@ -23,12 +24,18 @@ namespace CulinaryMC
             _bindingSource = new BindingSource();
             LoadMasterClasses();
             ConfigureDataGridView();
-            dgvMasterClasses.Columns["Name"].Width = 90;
-            dgvMasterClasses.Columns["Date"].Width = 120;
-            dgvMasterClasses.Columns["Description"].Width = 358;
-            dgvMasterClasses.Columns["Category"].Width = 80;
+            dgvMasterClasses.Columns["Name"].HeaderText = "Название";
+            dgvMasterClasses.Columns["Date"].HeaderText = "Дата";
+            dgvMasterClasses.Columns["Description"].HeaderText = "Описание";
+            dgvMasterClasses.Columns["Category"].HeaderText = "Проведение";
+            dgvMasterClasses.Columns["Name"].Width = 110;
+            dgvMasterClasses.Columns["Date"].Width = 119;
+            dgvMasterClasses.Columns["Description"].Width = 370;
+            dgvMasterClasses.Columns["Category"].Width = 100;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             dgvMasterClasses.ReadOnly = true;
+            dgvMasterClasses.RowHeadersVisible = false;
+            dgvMasterClasses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private void LoadRecentMasterClasses()
         {
