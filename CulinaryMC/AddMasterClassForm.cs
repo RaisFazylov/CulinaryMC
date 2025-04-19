@@ -15,6 +15,7 @@ namespace CulinaryMC
             dgvLast.Columns["Data"].Width = 145;
             dtpDate.MinDate = DateTime.Today;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             txtName.MaxLength = 20;
             txtDescription.MaxLength = 100;
             dgvLast.AllowUserToOrderColumns = false;

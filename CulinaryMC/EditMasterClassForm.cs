@@ -1,8 +1,6 @@
 ﻿using MasterClassManager.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Windows.Forms;
-using System.Xml.Linq;
+
 
 namespace CulinaryMC
 {
@@ -18,8 +16,13 @@ namespace CulinaryMC
             _dbContext = dbContext;
             InitializeFormFields();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+<<<<<<< HEAD
             txtName.MaxLength = 20;
             txtDescription.MaxLength = 100;
+=======
+            this.MaximizeBox = false;
+            dateTimePicker.MinDate = DateTime.Today;
+>>>>>>> юзинги
         }
 
         private void InitializeFormFields()

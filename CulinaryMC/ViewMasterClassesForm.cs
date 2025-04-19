@@ -22,6 +22,8 @@ namespace CulinaryMC
             InitializeComponent();
             _dbContext = new ApplicationDbContext();
             _bindingSource = new BindingSource();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             LoadMasterClasses();
             ConfigureDataGridView();
             dgvMasterClasses.Columns["Name"].HeaderText = "Название";
@@ -32,7 +34,6 @@ namespace CulinaryMC
             dgvMasterClasses.Columns["Date"].Width = 119;
             dgvMasterClasses.Columns["Description"].Width = 370;
             dgvMasterClasses.Columns["Category"].Width = 100;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             dgvMasterClasses.ReadOnly = true;
             dgvMasterClasses.RowHeadersVisible = false;
             dgvMasterClasses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
