@@ -16,13 +16,8 @@ namespace CulinaryMC
             _dbContext = dbContext;
             InitializeFormFields();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-<<<<<<< HEAD
             txtName.MaxLength = 20;
             txtDescription.MaxLength = 100;
-=======
-            this.MaximizeBox = false;
-            dateTimePicker.MinDate = DateTime.Today;
->>>>>>> юзинги
         }
 
         private void InitializeFormFields()
