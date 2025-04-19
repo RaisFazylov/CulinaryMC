@@ -3,12 +3,12 @@ using MasterClassManager.Models;
 namespace CulinaryMC
 {
     /// <summary>
-    /// Главная форма приложения "Кулинарные мастер-классы"
+    /// Главная форма приложения для управления кулинарными мастер-классами
     /// </summary>
     public partial class Home : Form
     {
         /// <summary>
-        /// Конструктор главной формы
+        /// Инициализирует главную форму и проверяет подключение к БД
         /// </summary>
         public Home()
         {
@@ -19,7 +19,7 @@ namespace CulinaryMC
         }
 
         /// <summary>
-        /// Инициализация базы данных при запуске приложения
+        /// Проверяет и создает базу данных при необходимости
         /// </summary>
         private void InitializeDatabase()
         {
@@ -28,12 +28,19 @@ namespace CulinaryMC
                 db.Initialize();
             }
         }
+
+        /// <summary>
+        /// Открывает форму добавления нового мастер-класса
+        /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var addForm = new AddMasterClassForm();
             addForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Открывает форму просмотра и редактирования мастер-классов
+        /// </summary>
         private void btnView_Click(object sender, EventArgs e)
         {
             var viewForm = new ViewMasterClassesForm();
@@ -42,7 +49,6 @@ namespace CulinaryMC
 
         private void Home_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -7,37 +7,50 @@ using System.Windows.Forms;
 namespace CulinaryMC
 {
     /// <summary>
-    /// Форма для просмотра и редактирования мастер-классов
+    /// Форма для просмотра, поиска и управления списком мастер-классов
     /// </summary>
     public partial class ViewMasterClassesForm : Form
     {
-        private ApplicationDbContext _dbContext;
-        private BindingSource _bindingSource;
+        private readonly ApplicationDbContext _dbContext;
+        private readonly BindingSource _bindingSource;
 
         /// <summary>
-        /// Конструктор формы просмотра
+        /// Инициализирует форму просмотра мастер-классов
         /// </summary>
         public ViewMasterClassesForm()
         {
             InitializeComponent();
             _dbContext = new ApplicationDbContext();
             _bindingSource = new BindingSource();
+
+            // Настройка формы
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+
+            // Загрузка данных и настройка DataGridView
             LoadMasterClasses();
             ConfigureDataGridView();
+
+            // Настройка заголовков и размеров столбцов
             dgvMasterClasses.Columns["Name"].HeaderText = "Название";
             dgvMasterClasses.Columns["Date"].HeaderText = "Дата";
             dgvMasterClasses.Columns["Description"].HeaderText = "Описание";
             dgvMasterClasses.Columns["Category"].HeaderText = "Проведение";
+
             dgvMasterClasses.Columns["Name"].Width = 110;
             dgvMasterClasses.Columns["Date"].Width = 119;
             dgvMasterClasses.Columns["Description"].Width = 370;
             dgvMasterClasses.Columns["Category"].Width = 100;
+
+            // Настройка поведения DataGridView
             dgvMasterClasses.ReadOnly = true;
             dgvMasterClasses.RowHeadersVisible = false;
             dgvMasterClasses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
+        /// <summary>
+        /// Загружает мастер-классы за последние 7 дней
+        /// </summary>
         private void LoadRecentMasterClasses()
         {
             var recentDate = DateTime.Now.AddDays(-7);
@@ -49,8 +62,9 @@ namespace CulinaryMC
             dgvMasterClasses.DataSource = recentClasses;
             dgvMasterClasses.Columns["Id"].Visible = false;
         }
+
         /// <summary>
-        /// Загрузка всех мастер-классов из базы данных
+        /// Загружает все мастер-классы из базы данных
         /// </summary>
         private void LoadMasterClasses()
         {
@@ -60,7 +74,7 @@ namespace CulinaryMC
         }
 
         /// <summary>
-        /// Настройка DataGridView для редактирования
+        /// Настраивает DataGridView для отображения мастер-классов
         /// </summary>
         private void ConfigureDataGridView()
         {
@@ -72,7 +86,7 @@ namespace CulinaryMC
         }
 
         /// <summary>
-        /// Обработчик нажатия кнопки "Сохранить изменения"
+        /// Обрабатывает сохранение изменений в выбранном мастер-классе
         /// </summary>
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
@@ -81,9 +95,10 @@ namespace CulinaryMC
                 MessageBox.Show("Необходимо выбрать мастер-класс для редактирования");
                 return;
             }
-            var selectedMasterClass = (MasterClass)dgvMasterClasses.SelectedRows[0].DataBoundItem;
 
+            var selectedMasterClass = (MasterClass)dgvMasterClasses.SelectedRows[0].DataBoundItem;
             var editForm = new EditMasterClassForm(selectedMasterClass, _dbContext);
+
             if (editForm.ShowDialog() == DialogResult.OK)
             {
                 _dbContext.SaveChanges();
@@ -93,12 +108,16 @@ namespace CulinaryMC
         }
 
         /// <summary>
-        /// Обработчик закрытия формы
+        /// Обрабатывает закрытие формы и освобождает ресурсы
         /// </summary>
         private void ViewMasterClassesForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             _dbContext?.Dispose();
         }
+
+        /// <summary>
+        /// Обрабатывает удаление выбранного мастер-класса
+        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvMasterClasses.SelectedRows.Count == 0)
@@ -120,8 +139,11 @@ namespace CulinaryMC
             {
                 MessageBox.Show($"Ошибка при удалении: {ex.Message}");
             }
-
         }
+
+        /// <summary>
+        /// Обрабатывает поиск мастер-классов по введенному тексту
+        /// </summary>
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim().ToLower();
@@ -131,34 +153,36 @@ namespace CulinaryMC
                 LoadMasterClasses();
                 return;
             }
+
             var filteredClasses = _dbContext.MasterClasses
                 .Where(mc =>
                     mc.Name.ToLower().Contains(searchText) ||
                     mc.Description.ToLower().Contains(searchText) ||
                     mc.Category.ToLower().Contains(searchText))
                 .ToList();
+
             dgvMasterClasses.DataSource = filteredClasses;
         }
-        private void ViewMasterClassesForm_Load(object sender, EventArgs e)
-        {
 
-        }
-
+        /// <summary>
+        /// Обрабатывает экспорт данных в Excel
+        /// </summary>
         private void btnReport_Click(object sender, EventArgs e)
         {
             try
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
-                saveFileDialog.Title = "Сохранить Excel файл";
-                saveFileDialog.FileName = "Мастер-классы_";
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Excel files (*.xlsx)|*.xlsx",
+                    Title = "Сохранить Excel файл",
+                    FileName = "Мастер-классы_"
+                };
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     using (var workbook = new XLWorkbook())
                     {
                         var worksheet = workbook.Worksheets.Add("Мастер-классы");
-
                         for (int i = 0; i < dgvMasterClasses.Columns.Count; i++)
                         {
                             worksheet.Cell(1, i + 1).Value = dgvMasterClasses.Columns[i].HeaderText;
@@ -167,7 +191,8 @@ namespace CulinaryMC
                         {
                             for (int j = 0; j < dgvMasterClasses.Columns.Count; j++)
                             {
-                                worksheet.Cell(i + 2, j + 1).Value = dgvMasterClasses.Rows[i].Cells[j].Value?.ToString();
+                                worksheet.Cell(i + 2, j + 1).Value =
+                                    dgvMasterClasses.Rows[i].Cells[j].Value?.ToString();
                             }
                         }
 
@@ -175,15 +200,19 @@ namespace CulinaryMC
                         workbook.SaveAs(saveFileDialog.FileName);
                     }
 
-                    MessageBox.Show("Данные успешно экспортированы в Excel!", "Экспорт завершен",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Данные успешно экспортированы в Excel!",
+                        "Экспорт завершен", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при экспорте в Excel: {ex.Message}", "Ошибка",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ошибка при экспорте в Excel: {ex.Message}",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ViewMasterClassesForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

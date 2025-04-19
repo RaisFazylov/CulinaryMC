@@ -4,20 +4,31 @@ using System.Windows.Forms;
 
 namespace CulinaryMC
 {
+    /// <summary>
+    /// Форма для добавления новых мастер-классов в систему
+    /// </summary>
     public partial class AddMasterClassForm : Form
     {
+        /// <summary>
+        /// Инициализирует форму добавления мастер-класса и настраивает элементы управления
+        /// </summary>
         public AddMasterClassForm()
         {
             InitializeComponent();
+            // Настройка DataGridView
             dgvLast.Columns.Add("Name", "Имя");
             dgvLast.Columns.Add("Data", "Время");
             dgvLast.Columns["Name"].Width = 145;
             dgvLast.Columns["Data"].Width = 145;
+
+            // Ограничения интерфейса
             dtpDate.MinDate = DateTime.Today;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             txtName.MaxLength = 20;
             txtDescription.MaxLength = 100;
+
+            // Настройка поведения DataGridView
             dgvLast.AllowUserToOrderColumns = false;
             dgvLast.AllowUserToResizeColumns = false;
             dgvLast.AllowUserToResizeRows = false;
@@ -27,11 +38,10 @@ namespace CulinaryMC
         }
 
         /// <summary>
-        /// Сохраняет новый мастер-класс в базу данных после проверки заполнения полей.
+        /// Обрабатывает сохранение нового мастер-класса в базу данных
         /// </summary>
         private void btnSave_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrWhiteSpace(txtName.Text) ||
                 string.IsNullOrWhiteSpace(txtDescription.Text) ||
                 cmbCategory.SelectedItem == null)
@@ -39,6 +49,7 @@ namespace CulinaryMC
                 MessageBox.Show("Необходимо заполнить все поля!");
                 return;
             }
+
             if (dtpDate.Value < DateTime.Now)
             {
                 MessageBox.Show("Все события на сегодня заняты!");
@@ -57,13 +68,9 @@ namespace CulinaryMC
                 using var db = new ApplicationDbContext();
                 db.MasterClasses.Add(newMasterClass);
                 db.SaveChanges();
+
                 MessageBox.Show("Мастер-класс успешно добавлен!");
-                object[] rowData =
-                {
-                    txtName.Text,
-                    dtpDate.Text,
-                    cmbCategory.SelectedItem.ToString()
-                };
+                object[] rowData = { txtName.Text, dtpDate.Text, cmbCategory.SelectedItem.ToString() };
                 dgvLast.Rows.Add(rowData);
             }
             catch (DbUpdateException dbEx)
