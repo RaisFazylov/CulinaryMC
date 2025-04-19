@@ -61,7 +61,7 @@
             // 
             btnSaveChanges.BackColor = Color.Moccasin;
             btnSaveChanges.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSaveChanges.Location = new Point(127, 386);
+            btnSaveChanges.Location = new Point(106, 386);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(170, 52);
             btnSaveChanges.TabIndex = 1;
@@ -73,16 +73,16 @@
             // 
             label1.BackColor = Color.Moccasin;
             label1.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(190, 19);
+            label1.Location = new Point(166, 19);
             label1.Name = "label1";
-            label1.Size = new Size(448, 48);
+            label1.Size = new Size(472, 48);
             label1.TabIndex = 2;
             label1.Text = "Поиск и редактирование мастер-классов";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(40, 80);
+            txtSearch.Location = new Point(40, 93);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(181, 27);
             txtSearch.TabIndex = 3;
@@ -91,9 +91,9 @@
             // 
             btnDelete.BackColor = Color.Moccasin;
             btnDelete.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDelete.Location = new Point(523, 386);
+            btnDelete.Location = new Point(511, 386);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(128, 52);
+            btnDelete.Size = new Size(170, 52);
             btnDelete.TabIndex = 4;
             btnDelete.Text = "Удалить";
             btnDelete.UseVisualStyleBackColor = false;
@@ -102,9 +102,9 @@
             // btnSearch
             // 
             btnSearch.BackColor = Color.Moccasin;
-            btnSearch.Location = new Point(219, 79);
+            btnSearch.Location = new Point(227, 88);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(31, 29);
+            btnSearch.Size = new Size(34, 36);
             btnSearch.TabIndex = 5;
             btnSearch.Text = "🔍︎";
             btnSearch.UseVisualStyleBackColor = false;
