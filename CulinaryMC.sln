@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CulinaryMC", "CulinaryMC\CulinaryMC.csproj", "{FA2E6C79-B9CF-495E-9ACD-0B0679940650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CulinaryMC", "CulinaryMC\CulinaryMC.csproj", "{FA2E6C79-B9CF-495E-9ACD-0B0679940650}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CulinaryMCTests", "CulinaryMCTests\CulinaryMCTests.csproj", "{D5C9299F-7B22-4F49-9585-5D131AD36BE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FA2E6C79-B9CF-495E-9ACD-0B0679940650}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA2E6C79-B9CF-495E-9ACD-0B0679940650}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA2E6C79-B9CF-495E-9ACD-0B0679940650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C9299F-7B22-4F49-9585-5D131AD36BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C9299F-7B22-4F49-9585-5D131AD36BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C9299F-7B22-4F49-9585-5D131AD36BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C9299F-7B22-4F49-9585-5D131AD36BE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
