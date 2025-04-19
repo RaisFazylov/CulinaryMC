@@ -1,7 +1,8 @@
 ﻿using MasterClassManager.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Windows.Forms;
+using ClosedXML.Excel;
+using System.IO;
+
 namespace CulinaryMC
 {
     /// <summary>
@@ -135,9 +136,46 @@ namespace CulinaryMC
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnReport_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+                saveFileDialog.Title = "Сохранить Excel файл";
+                saveFileDialog.FileName = "Мастер-классы_";
 
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (var workbook = new XLWorkbook())
+                    {
+                        var worksheet = workbook.Worksheets.Add("Мастер-классы");
+
+                        for (int i = 0; i < dgvMasterClasses.Columns.Count; i++)
+                        {
+                            worksheet.Cell(1, i + 1).Value = dgvMasterClasses.Columns[i].HeaderText;
+                        }
+                        for (int i = 0; i < dgvMasterClasses.Rows.Count; i++)
+                        {
+                            for (int j = 0; j < dgvMasterClasses.Columns.Count; j++)
+                            {
+                                worksheet.Cell(i + 2, j + 1).Value = dgvMasterClasses.Rows[i].Cells[j].Value?.ToString();
+                            }
+                        }
+
+                        worksheet.Columns().AdjustToContents();
+                        workbook.SaveAs(saveFileDialog.FileName);
+                    }
+
+                    MessageBox.Show("Данные успешно экспортированы в Excel!", "Экспорт завершен",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при экспорте в Excel: {ex.Message}", "Ошибка",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

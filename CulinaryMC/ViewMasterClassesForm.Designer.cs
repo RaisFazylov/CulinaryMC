@@ -35,6 +35,8 @@
             txtSearch = new TextBox();
             btnDelete = new Button();
             btnSearch = new Button();
+            btnReport = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvMasterClasses).BeginInit();
             SuspendLayout();
             // 
@@ -71,13 +73,12 @@
             // 
             label1.BackColor = Color.Moccasin;
             label1.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(174, 19);
+            label1.Location = new Point(190, 19);
             label1.Name = "label1";
             label1.Size = new Size(448, 48);
             label1.TabIndex = 2;
             label1.Text = "Поиск и редактирование мастер-классов";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
             // 
             // txtSearch
             // 
@@ -109,12 +110,34 @@
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
             // 
+            // btnReport
+            // 
+            btnReport.Location = new Point(771, 422);
+            btnReport.Name = "btnReport";
+            btnReport.Size = new Size(27, 28);
+            btnReport.TabIndex = 6;
+            btnReport.Text = "📃";
+            btnReport.UseVisualStyleBackColor = true;
+            btnReport.Click += btnReport_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Moccasin;
+            label2.Location = new Point(717, 426);
+            label2.Name = "label2";
+            label2.Size = new Size(48, 20);
+            label2.TabIndex = 7;
+            label2.Text = "Отчет";
+            // 
             // ViewMasterClassesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
+            Controls.Add(btnReport);
             Controls.Add(btnSearch);
             Controls.Add(btnDelete);
             Controls.Add(txtSearch);
@@ -138,5 +161,7 @@
         private TextBox txtSearch;
         private Button btnDelete;
         private Button btnSearch;
+        private Button btnReport;
+        private Label label2;
     }
 }

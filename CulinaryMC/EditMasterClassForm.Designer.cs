@@ -234,6 +234,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditMasterClassForm";
             Text = "Кулинарные мастер-классы";
+            Load += EditMasterClassForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -39,7 +39,7 @@ namespace CulinaryMC
             viewForm.ShowDialog();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Home_Load(object sender, EventArgs e)
         {
 
         }

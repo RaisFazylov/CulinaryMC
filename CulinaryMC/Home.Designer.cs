@@ -92,7 +92,6 @@
             labelo.TabIndex = 5;
             labelo.Text = "Кулинарные мастер-классы";
             labelo.TextAlign = ContentAlignment.MiddleCenter;
-            labelo.Click += label1_Click;
             // 
             // Home
             // 
@@ -108,6 +107,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Home";
             Text = "Кулинарные мастер-классы";
+            Load += Home_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

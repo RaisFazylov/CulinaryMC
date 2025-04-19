@@ -48,5 +48,10 @@ namespace CulinaryMC
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void EditMasterClassForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
