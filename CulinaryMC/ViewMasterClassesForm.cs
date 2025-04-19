@@ -1,7 +1,9 @@
 ﻿using MasterClassManager.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
+using ClosedXML.Excel;
+using System.IO;
 using System.Windows.Forms;
+
 namespace CulinaryMC
 {
     /// <summary>
@@ -20,14 +22,21 @@ namespace CulinaryMC
             InitializeComponent();
             _dbContext = new ApplicationDbContext();
             _bindingSource = new BindingSource();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             LoadMasterClasses();
             ConfigureDataGridView();
-            dgvMasterClasses.Columns["Name"].Width = 90;
-            dgvMasterClasses.Columns["Date"].Width = 120;
-            dgvMasterClasses.Columns["Description"].Width = 358;
-            dgvMasterClasses.Columns["Category"].Width = 80;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            dgvMasterClasses.Columns["Name"].HeaderText = "Название";
+            dgvMasterClasses.Columns["Date"].HeaderText = "Дата";
+            dgvMasterClasses.Columns["Description"].HeaderText = "Описание";
+            dgvMasterClasses.Columns["Category"].HeaderText = "Проведение";
+            dgvMasterClasses.Columns["Name"].Width = 110;
+            dgvMasterClasses.Columns["Date"].Width = 119;
+            dgvMasterClasses.Columns["Description"].Width = 370;
+            dgvMasterClasses.Columns["Category"].Width = 100;
             dgvMasterClasses.ReadOnly = true;
+            dgvMasterClasses.RowHeadersVisible = false;
+            dgvMasterClasses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private void LoadRecentMasterClasses()
         {
@@ -135,9 +144,46 @@ namespace CulinaryMC
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnReport_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+                saveFileDialog.Title = "Сохранить Excel файл";
+                saveFileDialog.FileName = "Мастер-классы_";
 
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (var workbook = new XLWorkbook())
+                    {
+                        var worksheet = workbook.Worksheets.Add("Мастер-классы");
+
+                        for (int i = 0; i < dgvMasterClasses.Columns.Count; i++)
+                        {
+                            worksheet.Cell(1, i + 1).Value = dgvMasterClasses.Columns[i].HeaderText;
+                        }
+                        for (int i = 0; i < dgvMasterClasses.Rows.Count; i++)
+                        {
+                            for (int j = 0; j < dgvMasterClasses.Columns.Count; j++)
+                            {
+                                worksheet.Cell(i + 2, j + 1).Value = dgvMasterClasses.Rows[i].Cells[j].Value?.ToString();
+                            }
+                        }
+
+                        worksheet.Columns().AdjustToContents();
+                        workbook.SaveAs(saveFileDialog.FileName);
+                    }
+
+                    MessageBox.Show("Данные успешно экспортированы в Excel!", "Экспорт завершен",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при экспорте в Excel: {ex.Message}", "Ошибка",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MasterClassManager.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Windows.Forms;
 
 namespace CulinaryMC
 {
@@ -8,17 +9,21 @@ namespace CulinaryMC
         public AddMasterClassForm()
         {
             InitializeComponent();
-            dataGridView1.Columns.Add("Name", "Имя");
-            dataGridView1.Columns.Add("Data", "Время");
-            dataGridView1.Columns["Name"].Width = 145;
-            dataGridView1.Columns["Data"].Width = 145;
+            dgvLast.Columns.Add("Name", "Имя");
+            dgvLast.Columns.Add("Data", "Время");
+            dgvLast.Columns["Name"].Width = 145;
+            dgvLast.Columns["Data"].Width = 145;
             dtpDate.MinDate = DateTime.Today;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             txtName.MaxLength = 20;
             txtDescription.MaxLength = 100;
-            dataGridView1.AllowUserToOrderColumns = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
+            dgvLast.AllowUserToOrderColumns = false;
+            dgvLast.AllowUserToResizeColumns = false;
+            dgvLast.AllowUserToResizeRows = false;
+            dgvLast.ReadOnly = true;
+            dgvLast.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgvLast.RowHeadersVisible = false;
         }
 
         /// <summary>
@@ -59,7 +64,7 @@ namespace CulinaryMC
                     dtpDate.Text,
                     cmbCategory.SelectedItem.ToString()
                 };
-                dataGridView1.Rows.Add(rowData); 
+                dgvLast.Rows.Add(rowData);
             }
             catch (DbUpdateException dbEx)
             {

@@ -15,6 +15,7 @@ namespace CulinaryMC
             InitializeComponent();
             InitializeDatabase();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
         }
 
         /// <summary>
@@ -39,7 +40,7 @@ namespace CulinaryMC
             viewForm.ShowDialog();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Home_Load(object sender, EventArgs e)
         {
 
         }

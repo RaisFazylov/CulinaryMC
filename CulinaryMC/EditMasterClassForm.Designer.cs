@@ -62,7 +62,7 @@
             // 
             label2.BackColor = Color.Moccasin;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 180);
+            label2.Location = new Point(12, 161);
             label2.Name = "label2";
             label2.Size = new Size(102, 27);
             label2.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             label3.BackColor = Color.Moccasin;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(12, 234);
+            label3.Location = new Point(12, 205);
             label3.Name = "label3";
             label3.Size = new Size(104, 23);
             label3.TabIndex = 2;
@@ -83,7 +83,7 @@
             // 
             label4.BackColor = Color.Moccasin;
             label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(12, 302);
+            label4.Location = new Point(12, 336);
             label4.Name = "label4";
             label4.Size = new Size(102, 25);
             label4.TabIndex = 3;
@@ -98,14 +98,15 @@
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(113, 234);
+            txtDescription.Location = new Point(113, 205);
+            txtDescription.Multiline = true;
             txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(250, 27);
+            txtDescription.Size = new Size(250, 122);
             txtDescription.TabIndex = 5;
             // 
             // dateTimePicker
             // 
-            dateTimePicker.Location = new Point(113, 180);
+            dateTimePicker.Location = new Point(113, 161);
             dateTimePicker.Name = "dateTimePicker";
             dateTimePicker.Size = new Size(250, 27);
             dateTimePicker.TabIndex = 6;
@@ -114,7 +115,7 @@
             // 
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Items.AddRange(new object[] { "Online", "Offline", "Online-Offline" });
-            comboBoxCategory.Location = new Point(113, 299);
+            comboBoxCategory.Location = new Point(113, 333);
             comboBoxCategory.Name = "comboBoxCategory";
             comboBoxCategory.Size = new Size(250, 28);
             comboBoxCategory.TabIndex = 7;
@@ -134,7 +135,7 @@
             // 
             lblCurrentDate.BackColor = Color.Moccasin;
             lblCurrentDate.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCurrentDate.Location = new Point(508, 180);
+            lblCurrentDate.Location = new Point(508, 161);
             lblCurrentDate.Name = "lblCurrentDate";
             lblCurrentDate.Size = new Size(280, 27);
             lblCurrentDate.TabIndex = 9;
@@ -145,9 +146,9 @@
             // 
             lblCurrentDescription.BackColor = Color.Moccasin;
             lblCurrentDescription.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCurrentDescription.Location = new Point(508, 234);
+            lblCurrentDescription.Location = new Point(508, 205);
             lblCurrentDescription.Name = "lblCurrentDescription";
-            lblCurrentDescription.Size = new Size(280, 27);
+            lblCurrentDescription.Size = new Size(280, 122);
             lblCurrentDescription.TabIndex = 10;
             lblCurrentDescription.Text = "Описание";
             lblCurrentDescription.TextAlign = ContentAlignment.MiddleCenter;
@@ -156,7 +157,7 @@
             // 
             lblCurrentCategory.BackColor = Color.Moccasin;
             lblCurrentCategory.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCurrentCategory.Location = new Point(508, 299);
+            lblCurrentCategory.Location = new Point(508, 330);
             lblCurrentCategory.Name = "lblCurrentCategory";
             lblCurrentCategory.Size = new Size(280, 28);
             lblCurrentCategory.TabIndex = 11;
@@ -202,7 +203,7 @@
             // 
             label6.BackColor = Color.Moccasin;
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(508, 77);
+            label6.Location = new Point(558, 71);
             label6.Name = "label6";
             label6.Size = new Size(179, 30);
             label6.TabIndex = 15;
@@ -234,6 +235,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditMasterClassForm";
             Text = "Кулинарные мастер-классы";
+            Load += EditMasterClassForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

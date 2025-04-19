@@ -1,8 +1,6 @@
 ﻿using MasterClassManager.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Windows.Forms;
-using System.Xml.Linq;
+
 
 namespace CulinaryMC
 {
@@ -18,6 +16,8 @@ namespace CulinaryMC
             _dbContext = dbContext;
             InitializeFormFields();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            txtName.MaxLength = 20;
+            txtDescription.MaxLength = 100;
         }
 
         private void InitializeFormFields()
@@ -47,6 +47,11 @@ namespace CulinaryMC
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void EditMasterClassForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
